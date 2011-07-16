@@ -1,0 +1,293 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A769898713D23F1100D20BB9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A769898613D23F1100D20BB9 /* Cocoa.framework */; };
+		A769899113D23F1100D20BB9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A769898F13D23F1100D20BB9 /* InfoPlist.strings */; };
+		A769899313D23F1100D20BB9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A769899213D23F1100D20BB9 /* main.m */; };
+		A769899713D23F1100D20BB9 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = A769899513D23F1100D20BB9 /* Credits.rtf */; };
+		A769899A13D23F1100D20BB9 /* LogicViewAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A769899913D23F1100D20BB9 /* LogicViewAppDelegate.m */; };
+		A769899D13D23F1100D20BB9 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A769899B13D23F1100D20BB9 /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A769898213D23F1100D20BB9 /* LogicView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LogicView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A769898613D23F1100D20BB9 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		A769898913D23F1100D20BB9 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		A769898A13D23F1100D20BB9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		A769898B13D23F1100D20BB9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A769898E13D23F1100D20BB9 /* LogicView-Info.plist */ = {isa = PBXFileReference; path = "LogicView-Info.plist"; sourceTree = "<group>"; };
+		A769899013D23F1100D20BB9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A769899213D23F1100D20BB9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A769899413D23F1100D20BB9 /* LogicView-Prefix.pch */ = {isa = PBXFileReference; path = "LogicView-Prefix.pch"; sourceTree = "<group>"; };
+		A769899613D23F1100D20BB9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		A769899813D23F1100D20BB9 /* LogicViewAppDelegate.h */ = {isa = PBXFileReference; path = LogicViewAppDelegate.h; sourceTree = "<group>"; };
+		A769899913D23F1100D20BB9 /* LogicViewAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogicViewAppDelegate.m; sourceTree = "<group>"; };
+		A769899C13D23F1100D20BB9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A769897F13D23F1100D20BB9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A769898713D23F1100D20BB9 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A769897713D23F1100D20BB9 = {
+			isa = PBXGroup;
+			children = (
+				A769898C13D23F1100D20BB9 /* LogicView */,
+				A769898513D23F1100D20BB9 /* Frameworks */,
+				A769898313D23F1100D20BB9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A769898313D23F1100D20BB9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A769898213D23F1100D20BB9 /* LogicView.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A769898513D23F1100D20BB9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A769898613D23F1100D20BB9 /* Cocoa.framework */,
+				A769898813D23F1100D20BB9 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A769898813D23F1100D20BB9 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A769898913D23F1100D20BB9 /* AppKit.framework */,
+				A769898A13D23F1100D20BB9 /* CoreData.framework */,
+				A769898B13D23F1100D20BB9 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		A769898C13D23F1100D20BB9 /* LogicView */ = {
+			isa = PBXGroup;
+			children = (
+				A769899813D23F1100D20BB9 /* LogicViewAppDelegate.h */,
+				A769899913D23F1100D20BB9 /* LogicViewAppDelegate.m */,
+				A769899B13D23F1100D20BB9 /* MainMenu.xib */,
+				A769898D13D23F1100D20BB9 /* Supporting Files */,
+			);
+			path = LogicView;
+			sourceTree = "<group>";
+		};
+		A769898D13D23F1100D20BB9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A769898E13D23F1100D20BB9 /* LogicView-Info.plist */,
+				A769898F13D23F1100D20BB9 /* InfoPlist.strings */,
+				A769899213D23F1100D20BB9 /* main.m */,
+				A769899413D23F1100D20BB9 /* LogicView-Prefix.pch */,
+				A769899513D23F1100D20BB9 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A769898113D23F1100D20BB9 /* LogicView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A76989A013D23F1200D20BB9 /* Build configuration list for PBXNativeTarget "LogicView" */;
+			buildPhases = (
+				A769897E13D23F1100D20BB9 /* Sources */,
+				A769897F13D23F1100D20BB9 /* Frameworks */,
+				A769898013D23F1100D20BB9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LogicView;
+			productName = LogicView;
+			productReference = A769898213D23F1100D20BB9 /* LogicView.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A769897913D23F1100D20BB9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = Reroo;
+			};
+			buildConfigurationList = A769897C13D23F1100D20BB9 /* Build configuration list for PBXProject "LogicView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A769897713D23F1100D20BB9;
+			productRefGroup = A769898313D23F1100D20BB9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A769898113D23F1100D20BB9 /* LogicView */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A769898013D23F1100D20BB9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A769899113D23F1100D20BB9 /* InfoPlist.strings in Resources */,
+				A769899713D23F1100D20BB9 /* Credits.rtf in Resources */,
+				A769899D13D23F1100D20BB9 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A769897E13D23F1100D20BB9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A769899313D23F1100D20BB9 /* main.m in Sources */,
+				A769899A13D23F1100D20BB9 /* LogicViewAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A769898F13D23F1100D20BB9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A769899013D23F1100D20BB9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A769899513D23F1100D20BB9 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A769899613D23F1100D20BB9 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		A769899B13D23F1100D20BB9 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A769899C13D23F1100D20BB9 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A769899E13D23F1200D20BB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		A769899F13D23F1200D20BB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		A76989A113D23F1200D20BB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LogicView/LogicView-Prefix.pch";
+				INFOPLIST_FILE = "LogicView/LogicView-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A76989A213D23F1200D20BB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LogicView/LogicView-Prefix.pch";
+				INFOPLIST_FILE = "LogicView/LogicView-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A769897C13D23F1100D20BB9 /* Build configuration list for PBXProject "LogicView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A769899E13D23F1200D20BB9 /* Debug */,
+				A769899F13D23F1200D20BB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A76989A013D23F1200D20BB9 /* Build configuration list for PBXNativeTarget "LogicView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A76989A113D23F1200D20BB9 /* Debug */,
+				A76989A213D23F1200D20BB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A769897913D23F1100D20BB9 /* Project object */;
+}
