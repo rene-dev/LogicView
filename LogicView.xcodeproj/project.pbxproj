@@ -13,6 +13,9 @@
 		A769899713D23F1100D20BB9 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = A769899513D23F1100D20BB9 /* Credits.rtf */; };
 		A769899A13D23F1100D20BB9 /* LogicViewAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A769899913D23F1100D20BB9 /* LogicViewAppDelegate.m */; };
 		A769899D13D23F1100D20BB9 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A769899B13D23F1100D20BB9 /* MainMenu.xib */; };
+		A76989A513D2403900D20BB9 /* libSaleaeDevice.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A76989A413D2403900D20BB9 /* libSaleaeDevice.dylib */; };
+		A76989A613D240DA00D20BB9 /* libSaleaeDevice.dylib in Resources */ = {isa = PBXBuildFile; fileRef = A76989A413D2403900D20BB9 /* libSaleaeDevice.dylib */; };
+		A7B21FD613D2935B003B96A6 /* SaleaeLogic.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7B21FD513D2935B003B96A6 /* SaleaeLogic.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,14 +24,18 @@
 		A769898913D23F1100D20BB9 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		A769898A13D23F1100D20BB9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		A769898B13D23F1100D20BB9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		A769898E13D23F1100D20BB9 /* LogicView-Info.plist */ = {isa = PBXFileReference; path = "LogicView-Info.plist"; sourceTree = "<group>"; };
+		A769898E13D23F1100D20BB9 /* LogicView-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LogicView-Info.plist"; sourceTree = "<group>"; };
 		A769899013D23F1100D20BB9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A769899213D23F1100D20BB9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		A769899413D23F1100D20BB9 /* LogicView-Prefix.pch */ = {isa = PBXFileReference; path = "LogicView-Prefix.pch"; sourceTree = "<group>"; };
+		A769899413D23F1100D20BB9 /* LogicView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LogicView-Prefix.pch"; sourceTree = "<group>"; };
 		A769899613D23F1100D20BB9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		A769899813D23F1100D20BB9 /* LogicViewAppDelegate.h */ = {isa = PBXFileReference; path = LogicViewAppDelegate.h; sourceTree = "<group>"; };
+		A769899813D23F1100D20BB9 /* LogicViewAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogicViewAppDelegate.h; sourceTree = "<group>"; };
 		A769899913D23F1100D20BB9 /* LogicViewAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogicViewAppDelegate.m; sourceTree = "<group>"; };
 		A769899C13D23F1100D20BB9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		A76989A413D2403900D20BB9 /* libSaleaeDevice.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libSaleaeDevice.dylib; path = ../lib/libSaleaeDevice.dylib; sourceTree = "<group>"; };
+		A7B21FD413D2935B003B96A6 /* SaleaeLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaleaeLogic.h; sourceTree = "<group>"; };
+		A7B21FD513D2935B003B96A6 /* SaleaeLogic.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SaleaeLogic.mm; sourceTree = "<group>"; };
+		A7B21FEE13D29B10003B96A6 /* SaleaeLogicmm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaleaeLogicmm.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A76989A513D2403900D20BB9 /* libSaleaeDevice.dylib in Frameworks */,
 				A769898713D23F1100D20BB9 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -63,6 +71,7 @@
 		A769898513D23F1100D20BB9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A76989A413D2403900D20BB9 /* libSaleaeDevice.dylib */,
 				A769898613D23F1100D20BB9 /* Cocoa.framework */,
 				A769898813D23F1100D20BB9 /* Other Frameworks */,
 			);
@@ -84,6 +93,9 @@
 			children = (
 				A769899813D23F1100D20BB9 /* LogicViewAppDelegate.h */,
 				A769899913D23F1100D20BB9 /* LogicViewAppDelegate.m */,
+				A7B21FD413D2935B003B96A6 /* SaleaeLogic.h */,
+				A7B21FEE13D29B10003B96A6 /* SaleaeLogicmm.h */,
+				A7B21FD513D2935B003B96A6 /* SaleaeLogic.mm */,
 				A769899B13D23F1100D20BB9 /* MainMenu.xib */,
 				A769898D13D23F1100D20BB9 /* Supporting Files */,
 			);
@@ -154,6 +166,7 @@
 			files = (
 				A769899113D23F1100D20BB9 /* InfoPlist.strings in Resources */,
 				A769899713D23F1100D20BB9 /* Credits.rtf in Resources */,
+				A76989A613D240DA00D20BB9 /* libSaleaeDevice.dylib in Resources */,
 				A769899D13D23F1100D20BB9 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -167,6 +180,7 @@
 			files = (
 				A769899313D23F1100D20BB9 /* main.m in Sources */,
 				A769899A13D23F1100D20BB9 /* LogicViewAppDelegate.m in Sources */,
+				A7B21FD613D2935B003B96A6 /* SaleaeLogic.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,7 +218,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -230,7 +244,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -250,7 +264,12 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LogicView/LogicView-Prefix.pch";
+				HEADER_SEARCH_PATHS = ../include;
 				INFOPLIST_FILE = "LogicView/LogicView-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../lib\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -261,7 +280,12 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LogicView/LogicView-Prefix.pch";
+				HEADER_SEARCH_PATHS = ../include;
 				INFOPLIST_FILE = "LogicView/LogicView-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../lib\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -286,6 +310,7 @@
 				A76989A213D23F1200D20BB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
