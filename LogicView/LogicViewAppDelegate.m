@@ -28,11 +28,12 @@
     [connected setStringValue:@"connected"];
 }
 
-- (void)deviceDisonnected:(NSString *)deviceID{
+- (void)deviceDisconnected:(NSString *)deviceID{
     [startStopButton setEnabled:NO];
     [connected setStringValue:@"disconnected"];
     [sLogic stopPoll];
     [startStopButton setTitle:@"Start"];
+    [value setStringValue:@""];
 }
 
 - (IBAction)botton:(id)sender {

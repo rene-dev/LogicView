@@ -14,7 +14,7 @@ LogicInterface* gDeviceInterface = NULL;
 U64 gLogicId = 0;
 U32 gSampleRateHz = 1000000;
 
-id objcptr;
+//id objcptr;
 
 @implementation SaleaeLogic
 
@@ -24,10 +24,10 @@ id objcptr;
 {
     self = [super init];
     if (self) {
-        objcptr = self;
+        //objcptr = self;
         pollTimer = nil;
-        DevicesManagerInterface::RegisterOnConnect( &OnConnect );
-        DevicesManagerInterface::RegisterOnDisconnect( &OnDisconnect );
+        DevicesManagerInterface::RegisterOnConnect( &OnConnect,self);
+        DevicesManagerInterface::RegisterOnDisconnect( &OnDisconnect,self);
         DevicesManagerInterface::BeginConnect();
         isConnected = NO;
     }
@@ -65,8 +65,8 @@ void __stdcall OnConnect( U64 device_id, GenericInterface* device_interface, voi
 {    
 	if( dynamic_cast<LogicInterface*>( device_interface ) != NULL )
 	{
-        [[objcptr delegate] deviceConnected:[NSString stringWithFormat:@"%x",device_id]];
-        
+        //[[objcptr delegate] deviceConnected:[NSString stringWithFormat:@"%x",device_id]];
+        [[(id)user_data delegate] deviceConnected:[NSString stringWithFormat:@"%x",device_id]];
 		gDeviceInterface = (LogicInterface*)device_interface;
 		gLogicId = device_id;
         
@@ -82,7 +82,9 @@ void __stdcall OnDisconnect( U64 device_id, void* user_data )
 {    
 	if( device_id == gLogicId )
 	{
-        [[objcptr delegate] deviceDisconnected:[NSString stringWithFormat:@"%x",device_id]];
+        //[[objcptr delegate] deviceDisconnected:[NSString stringWithFormat:@"%x",device_id]];
+        [[(id)user_data delegate] deviceDisconnected:[NSString stringWithFormat:@"%x",device_id]];
+        
 		gDeviceInterface = NULL;
 	}
 }
@@ -106,7 +108,7 @@ void __stdcall OnWriteData( U64 device_id, U8* data, U32 data_length, void* user
 
 void __stdcall OnError( U64 device_id, void* user_data )
 {
-    [[objcptr delegate] deviceError:[NSString stringWithFormat:@"%x",device_id]];
+    //[[objcptr delegate] deviceError:[NSString stringWithFormat:@"%x",device_id]];
 }
 
 @end
