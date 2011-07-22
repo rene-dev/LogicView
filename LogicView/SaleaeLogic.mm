@@ -65,7 +65,6 @@ void __stdcall OnConnect( U64 device_id, GenericInterface* device_interface, voi
 {    
 	if( dynamic_cast<LogicInterface*>( device_interface ) != NULL )
 	{
-        //[[objcptr delegate] deviceConnected:[NSString stringWithFormat:@"%x",device_id]];
         [[(id)user_data delegate] deviceConnected:[NSString stringWithFormat:@"%x",device_id]];
 		gDeviceInterface = (LogicInterface*)device_interface;
 		gLogicId = device_id;
