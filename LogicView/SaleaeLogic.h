@@ -26,7 +26,7 @@
 @end
 
 @protocol SaleaeLogicConnectionDelegate
-@optional
+
 - (void)deviceConnected:(NSString *)deviceID;
 - (void)deviceDisconnected:(NSString *)deviceID;
 - (void)deviceError:(NSString *)deviceID;

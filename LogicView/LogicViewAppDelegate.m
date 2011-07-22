@@ -36,6 +36,10 @@
     [value setStringValue:@""];
 }
 
+- (void)deviceError:(NSString *)deviceID{
+    NSLog(@"Device Error");
+}
+
 - (IBAction)botton:(id)sender {
     if([sLogic startPoll])
         [startStopButton setTitle:@"Stop"];
