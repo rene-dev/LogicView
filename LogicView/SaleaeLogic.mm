@@ -65,7 +65,9 @@ void __stdcall OnConnect( U64 device_id, GenericInterface* device_interface, voi
 {    
 	if( dynamic_cast<LogicInterface*>( device_interface ) != NULL )
 	{
+        NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
         [[(id)user_data delegate] deviceConnected:[NSString stringWithFormat:@"%x",device_id]];
+        [pool release];
 		gDeviceInterface = (LogicInterface*)device_interface;
 		gLogicId = device_id;
         
@@ -81,7 +83,9 @@ void __stdcall OnDisconnect( U64 device_id, void* user_data )
 {    
 	if( device_id == gLogicId )
 	{
+        NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
         [[(id)user_data delegate] deviceDisconnected:[NSString stringWithFormat:@"%x",device_id]];
+        [pool release];
         
 		gDeviceInterface = NULL;
 	}
@@ -106,7 +110,9 @@ void __stdcall OnWriteData( U64 device_id, U8* data, U32 data_length, void* user
 
 void __stdcall OnError( U64 device_id, void* user_data )
 {
+    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
     [[(id)user_data delegate] deviceError:[NSString stringWithFormat:@"%x",device_id]];
+    [pool release];
 }
 
 @end
