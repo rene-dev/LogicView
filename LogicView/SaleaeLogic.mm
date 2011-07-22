@@ -70,9 +70,9 @@ void __stdcall OnConnect( U64 device_id, GenericInterface* device_interface, voi
 		gDeviceInterface = (LogicInterface*)device_interface;
 		gLogicId = device_id;
         
-		gDeviceInterface->RegisterOnReadData( &OnReadData );
-		gDeviceInterface->RegisterOnWriteData( &OnWriteData );
-		gDeviceInterface->RegisterOnError( &OnError );
+		gDeviceInterface->RegisterOnReadData( &OnReadData,user_data);
+		gDeviceInterface->RegisterOnWriteData( &OnWriteData,user_data);
+		gDeviceInterface->RegisterOnError( &OnError,user_data);
         
 		gDeviceInterface->SetSampleRateHz( gSampleRateHz );
 	}
@@ -82,7 +82,6 @@ void __stdcall OnDisconnect( U64 device_id, void* user_data )
 {    
 	if( device_id == gLogicId )
 	{
-        //[[objcptr delegate] deviceDisconnected:[NSString stringWithFormat:@"%x",device_id]];
         [[(id)user_data delegate] deviceDisconnected:[NSString stringWithFormat:@"%x",device_id]];
         
 		gDeviceInterface = NULL;
@@ -108,7 +107,7 @@ void __stdcall OnWriteData( U64 device_id, U8* data, U32 data_length, void* user
 
 void __stdcall OnError( U64 device_id, void* user_data )
 {
-    //[[objcptr delegate] deviceError:[NSString stringWithFormat:@"%x",device_id]];
+    [[(id)user_data delegate] deviceError:[NSString stringWithFormat:@"%x",device_id]];
 }
 
 @end
