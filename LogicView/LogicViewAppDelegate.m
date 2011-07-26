@@ -16,6 +16,7 @@
 {
     sLogic = [[SaleaeLogic alloc]init];
     [sLogic setDelegate:self];
+    [NSApp setDelegate:self];
     [value setStringValue:@""];
 }
 
@@ -47,6 +48,10 @@
         [value setStringValue:@""];
         [startStopButton setTitle:@"Start"];
     }
+}
+
+- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication{
+    return YES;
 }
 
 @end

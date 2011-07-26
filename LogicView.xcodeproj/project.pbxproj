@@ -140,6 +140,7 @@
 		A769897913D23F1100D20BB9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = Reroo;
 			};
 			buildConfigurationList = A769897C13D23F1100D20BB9 /* Build configuration list for PBXProject "LogicView" */;
