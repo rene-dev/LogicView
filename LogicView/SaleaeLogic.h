@@ -8,24 +8,24 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol SaleaeLogicConnectionDelegate;
+@protocol SaleaeLogicDelegate;
 @interface SaleaeLogic : NSObject{
-    id <SaleaeLogicConnectionDelegate> delegate;
-    NSTimer *pollTimer;
-    BOOL isConnected;
+    id <SaleaeLogicDelegate> delegate;
+    BOOL isConnected; //Logic device is connected
+    BOOL isReading;   //We are reading from the device
 }
 
 - (BOOL)startPoll;
 - (BOOL)stopPoll;
 - (void)poll;
+- (void)hallo:(unsigned char*)data length:(unsigned int)length;
 
-@property (nonatomic,retain) NSTimer *pollTimer;
 @property (nonatomic) BOOL isConnected;
-@property (nonatomic, assign) id <SaleaeLogicConnectionDelegate> delegate;
+@property (nonatomic, assign) id <SaleaeLogicDelegate> delegate;
 
 @end
 
-@protocol SaleaeLogicConnectionDelegate
+@protocol SaleaeLogicDelegate
 
 - (void)deviceConnected:(NSString *)deviceID;
 - (void)deviceDisconnected:(NSString *)deviceID;

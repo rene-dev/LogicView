@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A72350E2180C13760027A8F8 /* libSaleaeDevice.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A76989A413D2403900D20BB9 /* libSaleaeDevice.dylib */; };
 		A769898713D23F1100D20BB9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A769898613D23F1100D20BB9 /* Cocoa.framework */; };
 		A769899113D23F1100D20BB9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A769898F13D23F1100D20BB9 /* InfoPlist.strings */; };
 		A769899313D23F1100D20BB9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A769899213D23F1100D20BB9 /* main.m */; };
@@ -16,7 +17,21 @@
 		A76989A513D2403900D20BB9 /* libSaleaeDevice.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A76989A413D2403900D20BB9 /* libSaleaeDevice.dylib */; };
 		A76989A613D240DA00D20BB9 /* libSaleaeDevice.dylib in Resources */ = {isa = PBXBuildFile; fileRef = A76989A413D2403900D20BB9 /* libSaleaeDevice.dylib */; };
 		A7B21FD613D2935B003B96A6 /* SaleaeLogic.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7B21FD513D2935B003B96A6 /* SaleaeLogic.mm */; };
+		A7D433F91633FDBF0044D0ED /* SampleRate.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D433F81633FDBF0044D0ED /* SampleRate.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A72350E1180C136B0027A8F8 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				A72350E2180C13760027A8F8 /* libSaleaeDevice.dylib in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		A769898213D23F1100D20BB9 /* LogicView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LogicView.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,6 +51,8 @@
 		A7B21FD413D2935B003B96A6 /* SaleaeLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaleaeLogic.h; sourceTree = "<group>"; };
 		A7B21FD513D2935B003B96A6 /* SaleaeLogic.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SaleaeLogic.mm; sourceTree = "<group>"; };
 		A7B21FEE13D29B10003B96A6 /* SaleaeLogicmm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaleaeLogicmm.h; sourceTree = "<group>"; };
+		A7D433F71633FDBF0044D0ED /* SampleRate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleRate.h; sourceTree = "<group>"; };
+		A7D433F81633FDBF0044D0ED /* SampleRate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleRate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +114,8 @@
 				A7B21FEE13D29B10003B96A6 /* SaleaeLogicmm.h */,
 				A7B21FD513D2935B003B96A6 /* SaleaeLogic.mm */,
 				A769899B13D23F1100D20BB9 /* MainMenu.xib */,
+				A7D433F71633FDBF0044D0ED /* SampleRate.h */,
+				A7D433F81633FDBF0044D0ED /* SampleRate.m */,
 				A769898D13D23F1100D20BB9 /* Supporting Files */,
 			);
 			path = LogicView;
@@ -124,6 +143,7 @@
 				A769897E13D23F1100D20BB9 /* Sources */,
 				A769897F13D23F1100D20BB9 /* Frameworks */,
 				A769898013D23F1100D20BB9 /* Resources */,
+				A72350E1180C136B0027A8F8 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -140,7 +160,7 @@
 		A769897913D23F1100D20BB9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = Reroo;
 			};
 			buildConfigurationList = A769897C13D23F1100D20BB9 /* Build configuration list for PBXProject "LogicView" */;
@@ -182,6 +202,7 @@
 				A769899313D23F1100D20BB9 /* main.m in Sources */,
 				A769899A13D23F1100D20BB9 /* LogicViewAppDelegate.m in Sources */,
 				A7B21FD613D2935B003B96A6 /* SaleaeLogic.mm in Sources */,
+				A7D433F91633FDBF0044D0ED /* SampleRate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +241,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -234,8 +259,9 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
@@ -246,6 +272,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -254,8 +284,9 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -263,6 +294,7 @@
 		A76989A113D23F1200D20BB9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LogicView/LogicView-Prefix.pch";
 				HEADER_SEARCH_PATHS = ../include;
@@ -271,6 +303,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/../lib\"",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -279,6 +312,7 @@
 		A76989A213D23F1200D20BB9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LogicView/LogicView-Prefix.pch";
 				HEADER_SEARCH_PATHS = ../include;
@@ -287,6 +321,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/../lib\"",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
