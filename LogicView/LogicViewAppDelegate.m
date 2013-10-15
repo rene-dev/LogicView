@@ -66,16 +66,20 @@
 
 - (void)deviceError:(NSString *)deviceID{
     NSLog(@"Device Error");
+    [self performSelectorOnMainThread:@selector(displayError) withObject:nil waitUntilDone:NO];
+    [startStopButton setTitle:@"Start"];
+    [sampleRate setEnabled:YES];
+    //todo: um polling in saleaelogic.mm kümmern, das wird hier nicht zurückgesetzt. ist das so?
+    
+}
+
+- (void)displayError{
     NSAlert *alert = [[[NSAlert alloc] init] autorelease];
     [alert addButtonWithTitle:@"OK"];
     [alert setMessageText:@"Logic could not keep up."];
     [alert setInformativeText:@"You can try a lower sample rate."];
     [alert setAlertStyle:NSWarningAlertStyle];
     [alert beginSheetModalForWindow:[self window] modalDelegate:nil didEndSelector:nil contextInfo:nil];
-    [startStopButton setTitle:@"Start"];
-    [sampleRate setEnabled:YES];
-    //todo: um polling in saleaelogic.mm kümmern, das wird hier nicht zurückgesetzt.
-    
 }
 
 - (IBAction)botton:(id)sender {

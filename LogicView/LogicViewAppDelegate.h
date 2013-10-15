@@ -21,6 +21,7 @@
 }
 - (IBAction)botton:(id)sender;
 - (void)sampleRateChanged:(id)sender;
+- (void)displayError;
 
 @property (strong) IBOutlet NSWindow *window;
 @property (nonatomic,retain) IBOutlet NSTextField *value;
