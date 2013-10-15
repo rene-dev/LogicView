@@ -82,45 +82,22 @@ bool polling = NO;
 }
 
 - (void)hallo:(unsigned char*)data length:(unsigned int)length{
-    //[[self delegate] dataArrived:@"polled" data:[NSString stringWithFormat:@"%x",U32(data[0])]];
-    int i = [self trigger:data length:length channel:2 rising:YES] - 3;
-    const int leng = 250;
-    unsigned char j[leng];
-    int k = 0;
-    unsigned char text1[leng+1];
-    unsigned char text2[leng+1];
-    unsigned char text3[leng+1];
-    unsigned char text4[leng+1];
-    unsigned char text5[leng+1];
-    unsigned char text6[leng+1];
-    unsigned char text7[leng+1];
-    unsigned char text8[leng+1];
-    //NSLog(@"hallo %i",i);
-    if(i>-1){
-        for(;k<leng;k++){
-            j[k] = (i+k<length)?data[i+k]:0;
-            text1[k] = (j[k]&(1<<0))?'-':'_';
-            text2[k] = (j[k]&(1<<1))?'-':'_';
-            text3[k] = (j[k]&(1<<2))?'-':'_';
-            text4[k] = (j[k]&(1<<3))?'-':'_';
-            text5[k] = (j[k]&(1<<4))?'-':'_';
-            text6[k] = (j[k]&(1<<5))?'-':'_';
-            text7[k] = (j[k]&(1<<6))?'-':'_';
-            text8[k] = (j[k]&(1<<7))?'-':'_';
+    int edgePosition = [self trigger:data length:length channel:2 rising:YES] - 3;
+    const int displayLength = 250;
+    const int numberOfChannels = 8;
+    unsigned char lineBuf[displayLength];
+    unsigned char textLine[numberOfChannels][displayLength+1];
+    
+    if(edgePosition>-1){//when edge in data
+        for(int dataPosition = 0;dataPosition<displayLength;dataPosition++){
+            lineBuf[dataPosition] = (edgePosition+dataPosition<length)?data[edgePosition+dataPosition]:0;
+            for (int channel = 0; channel < numberOfChannels; channel++) {
+                textLine[channel][dataPosition] = (lineBuf[dataPosition]&(1<<channel))?'-':'_';
+                textLine[channel][displayLength] = '\0';
+            }
         }
-    
-    text1[leng] = '\0';
-    text2[leng] = '\0';
-    text3[leng] = '\0';
-    text4[leng] = '\0';
-    text5[leng] = '\0';
-    text6[leng] = '\0';
-    text7[leng] = '\0';
-    text8[leng] = '\0';
-    //NSLog([NSString stringWithFormat:@"%s",text]);
-    [[self delegate] dataArrived:nil data:[NSString stringWithFormat:@"%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s",text1,text2,text3,text4,text5,text6,text7,text8]];
+    [[self delegate] dataArrived:nil data:[NSString stringWithFormat:@"%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s",textLine[0],textLine[1],textLine[2],textLine[3],textLine[4],textLine[5],textLine[6],textLine[7]]];
     }
-    
 }
 
 - (int)trigger:(unsigned char*)data length:(unsigned int)length channel:(int)ch rising:(BOOL)fl{
