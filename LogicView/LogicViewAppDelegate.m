@@ -34,7 +34,23 @@
                             @"24 MHz",
                             nil];
     
+    NSArray* allChannels = [NSArray arrayWithObjects:
+                               @"Channel 1",
+                               @"Channel 2",
+                               @"Channel 3",
+                               @"Channel 4",
+                               @"Channel 5",
+                               @"Channel 6",
+                               @"Channel 7",
+                               @"Channel 8",
+                               nil];
+    
     [sampleRate addItemsWithTitles:allSampleRates];
+    [triggerChannel addItemsWithTitles:allChannels];
+    [triggerPos setContinuous:YES];
+    [sLogic setTriggerRising:YES];
+    [sLogic setTriggerChannel:0];
+    [sLogic setTriggerPos:5];
     [textField setStringValue:@"1\n2\n3\n4\n5\n6\n7\n8\n"];
 }
 
@@ -80,6 +96,16 @@
     [alert setInformativeText:@"You can try a lower sample rate."];
     [alert setAlertStyle:NSWarningAlertStyle];
     [alert beginSheetModalForWindow:[self window] modalDelegate:nil didEndSelector:nil contextInfo:nil];
+}
+
+- (IBAction)updateTrigger:(id)sender {
+    if ([triggerEdge selectedSegment] == 0) {
+        [sLogic setTriggerRising:YES];
+    }else{
+        [sLogic setTriggerRising:NO];
+    }
+    [sLogic setTriggerChannel:[triggerChannel indexOfSelectedItem]];
+    [sLogic setTriggerPos:[triggerPos floatValue]];
 }
 
 - (IBAction)botton:(id)sender {

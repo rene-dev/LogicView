@@ -18,10 +18,14 @@
     int samples;
     IBOutlet NSPopUpButton *sampleRate;
     IBOutlet NSTextField *textField;
+    IBOutlet NSPopUpButton *triggerChannel;
+    IBOutlet NSSegmentedControl *triggerEdge;
+    IBOutlet NSSlider *triggerPos;
 }
 - (IBAction)botton:(id)sender;
 - (void)sampleRateChanged:(id)sender;
 - (void)displayError;
+- (IBAction)updateTrigger:(id)sender;
 
 @property (strong) IBOutlet NSWindow *window;
 @property (nonatomic,retain) IBOutlet NSTextField *value;

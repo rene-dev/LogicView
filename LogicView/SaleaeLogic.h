@@ -13,6 +13,10 @@
     id <SaleaeLogicDelegate> delegate;
     BOOL isConnected; //Logic device is connected
     BOOL isReading;   //We are reading from the device
+    @public
+    NSInteger triggerChannel;
+    NSInteger triggerPos;
+    BOOL triggerRising;
 }
 
 - (BOOL)startPoll:(NSInteger)samplerate;
@@ -22,6 +26,9 @@
 
 @property (nonatomic) BOOL isConnected;
 @property (nonatomic, assign) id <SaleaeLogicDelegate> delegate;
+@property (nonatomic) NSInteger triggerChannel;
+@property (nonatomic) NSInteger triggerPos;
+@property (nonatomic) BOOL triggerRising;
 
 @end
 

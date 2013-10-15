@@ -19,7 +19,7 @@ bool polling = NO;
 
 @implementation SaleaeLogic
 
-@synthesize isConnected,delegate;
+@synthesize isConnected,delegate,triggerChannel,triggerRising,triggerPos;
 
 - (id)init
 {
@@ -82,7 +82,8 @@ bool polling = NO;
 }
 
 - (void)hallo:(unsigned char*)data length:(unsigned int)length{
-    int edgePosition = [self trigger:data length:length channel:2 rising:YES] - 3;
+    int edgePosition = [self trigger:data length:length channel:triggerChannel rising:triggerRising] - triggerPos;
+    NSLog(@"t %i",[self triggerChannel]);
     const int displayLength = 250;
     const int numberOfChannels = 8;
     unsigned char lineBuf[displayLength];
