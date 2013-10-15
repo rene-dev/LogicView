@@ -27,7 +27,6 @@
 @property (nonatomic,retain) IBOutlet NSTextField *value;
 @property (nonatomic,retain) IBOutlet NSTextField *samplestext;
 @property (nonatomic,retain) IBOutlet NSButton *startStopButton;
-@property (nonatomic,retain) IBOutlet NSPopUpButton *SampleRatePopUpButton;
 @property (nonatomic,retain) IBOutlet NSTextField *textField;
 
 @end
