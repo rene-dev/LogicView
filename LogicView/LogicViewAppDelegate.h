@@ -20,6 +20,7 @@
     IBOutlet NSPopUpButton *SampleRatePopUpButton;
     int samples;
     NSMutableArray* allSampleRates;
+    IBOutlet NSTextField *textField;
     SampleRate *currentlySelectedSampleRate;
 }
 - (IBAction)botton:(id)sender;
@@ -32,5 +33,6 @@
 @property (nonatomic,retain) IBOutlet NSTextField *samplestext;
 @property (nonatomic,retain) IBOutlet NSButton *startStopButton;
 @property (nonatomic,retain) IBOutlet NSPopUpButton *SampleRatePopUpButton;
+@property (nonatomic,retain) IBOutlet NSTextField *textField;
 
 @end

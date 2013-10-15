@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A72350E2180C13760027A8F8 /* libSaleaeDevice.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = A76989A413D2403900D20BB9 /* libSaleaeDevice.dylib */; };
+		A72350EA180C25D30027A8F8 /* PlotView.m in Sources */ = {isa = PBXBuildFile; fileRef = A72350E9180C25D30027A8F8 /* PlotView.m */; };
 		A769898713D23F1100D20BB9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A769898613D23F1100D20BB9 /* Cocoa.framework */; };
 		A769899113D23F1100D20BB9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A769898F13D23F1100D20BB9 /* InfoPlist.strings */; };
 		A769899313D23F1100D20BB9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A769899213D23F1100D20BB9 /* main.m */; };
@@ -34,6 +35,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A72350E8180C25D30027A8F8 /* PlotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlotView.h; sourceTree = "<group>"; };
+		A72350E9180C25D30027A8F8 /* PlotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlotView.m; sourceTree = "<group>"; };
 		A769898213D23F1100D20BB9 /* LogicView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LogicView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A769898613D23F1100D20BB9 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		A769898913D23F1100D20BB9 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -110,6 +113,8 @@
 			children = (
 				A769899813D23F1100D20BB9 /* LogicViewAppDelegate.h */,
 				A769899913D23F1100D20BB9 /* LogicViewAppDelegate.m */,
+				A72350E8180C25D30027A8F8 /* PlotView.h */,
+				A72350E9180C25D30027A8F8 /* PlotView.m */,
 				A7B21FD413D2935B003B96A6 /* SaleaeLogic.h */,
 				A7B21FEE13D29B10003B96A6 /* SaleaeLogicmm.h */,
 				A7B21FD513D2935B003B96A6 /* SaleaeLogic.mm */,
@@ -203,6 +208,7 @@
 				A769899A13D23F1100D20BB9 /* LogicViewAppDelegate.m in Sources */,
 				A7B21FD613D2935B003B96A6 /* SaleaeLogic.mm in Sources */,
 				A7D433F91633FDBF0044D0ED /* SampleRate.m in Sources */,
+				A72350EA180C25D30027A8F8 /* PlotView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

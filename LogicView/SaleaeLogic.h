@@ -31,5 +31,6 @@
 - (void)deviceDisconnected:(NSString *)deviceID;
 - (void)deviceError:(NSString *)deviceID;
 - (void)dataArrived:(NSString *)deviceID data:(NSString *)data;
+- (int)trigger:(unsigned char*)data length:(unsigned int)length channel:(int)ch rising:(BOOL)fl;
 
 @end

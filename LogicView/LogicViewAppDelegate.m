@@ -10,7 +10,7 @@
 
 @implementation LogicViewAppDelegate
 
-@synthesize window = _window,value,startStopButton,samplestext,SampleRatePopUpButton,allSampleRates,currentlySelectedSampleRate;
+@synthesize window = _window,value,startStopButton,samplestext,SampleRatePopUpButton,allSampleRates,currentlySelectedSampleRate,textField;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
@@ -55,6 +55,7 @@
     //[SampleRate addItemsWithTitles:sampleRates];
     //[SampleRate setTarget:self];
     //[SampleRate setAction:@selector(sampleRateChanged:)];
+    [textField setStringValue:@"1\n2\n3\n4\n5\n6\n7\n8\n"];
 }
 
 -(void)sampleRateChanged:(id)sender
@@ -63,8 +64,9 @@
 }
 
 - (void)dataArrived:(NSString *)deviceID data:(NSString *)data{
-    [value setStringValue:data];
-    [samplestext setStringValue:[NSString stringWithFormat:@"%i",samples]];
+    //[value setStringValue:data];
+    //[samplestext setStringValue:[NSString stringWithFormat:@"%i",samples]];
+    [textField setStringValue:data];
 }
 
 - (void)deviceConnected:(NSString *)deviceID{

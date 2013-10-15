@@ -12,7 +12,7 @@
 LogicInterface* gDeviceInterface = NULL;
 
 U64 gLogicId = 0;
-U32 gSampleRateHz = 1000000;
+U32 gSampleRateHz = 4000000;
 
 id objcptr;
 bool polling = NO;
@@ -81,24 +81,56 @@ bool polling = NO;
 }
 
 - (void)hallo:(unsigned char*)data length:(unsigned int)length{
-    int i = 0;
-    int flanken = 0;
-    float freq = 0;
-    float time = 0;
-    for(i = 1;i<length;i++){
-        if (data[i] == 127 && data[i-1] == 255) {
-            flanken++;
+    //[[self delegate] dataArrived:@"polled" data:[NSString stringWithFormat:@"%x",U32(data[0])]];
+    int i = [self trigger:data length:length channel:2 rising:YES] - 3;
+    const int leng = 250;
+    unsigned char j[leng];
+    int k = 0;
+    unsigned char text1[leng+1];
+    unsigned char text2[leng+1];
+    unsigned char text3[leng+1];
+    unsigned char text4[leng+1];
+    unsigned char text5[leng+1];
+    unsigned char text6[leng+1];
+    unsigned char text7[leng+1];
+    unsigned char text8[leng+1];
+    //NSLog(@"hallo %i",i);
+    if(i>-1){
+        for(;k<leng;k++){
+            j[k] = (i+k<length)?data[i+k]:0;
+            text1[k] = (j[k]&(1<<0))?'-':'_';
+            text2[k] = (j[k]&(1<<1))?'-':'_';
+            text3[k] = (j[k]&(1<<2))?'-':'_';
+            text4[k] = (j[k]&(1<<3))?'-':'_';
+            text5[k] = (j[k]&(1<<4))?'-':'_';
+            text6[k] = (j[k]&(1<<5))?'-':'_';
+            text7[k] = (j[k]&(1<<6))?'-':'_';
+            text8[k] = (j[k]&(1<<7))?'-':'_';
         }
+    
+    text1[leng] = '\0';
+    text2[leng] = '\0';
+    text3[leng] = '\0';
+    text4[leng] = '\0';
+    text5[leng] = '\0';
+    text6[leng] = '\0';
+    text7[leng] = '\0';
+    text8[leng] = '\0';
+    //NSLog([NSString stringWithFormat:@"%s",text]);
+    [[self delegate] dataArrived:nil data:[NSString stringWithFormat:@"%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s",text1,text2,text3,text4,text5,text6,text7,text8]];
     }
-    time = (float)length/(float)gSampleRateHz;
-    if (time == 0) {
-        freq = 8;
-    }else{
-    freq = (float)flanken/(float)time;
-    }
-        
+    
+}
 
-    NSLog(@"hallo %f",freq);
+- (int)trigger:(unsigned char*)data length:(unsigned int)length channel:(int)ch rising:(BOOL)fl{
+    int i = 0;
+    for(i = 1;i<length;i++){
+        if ((data[i]&(1<<ch)) != (data[i-1]&(1<<ch)) && !(data[i]&(1<<ch)) != fl) {
+            return i;
+        }
+    }    
+    return -1;
+    NSLog(@"hallo %i",length);
 }
 
 void __stdcall OnConnect( U64 device_id, GenericInterface* device_interface, void* user_data )
