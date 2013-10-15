@@ -83,13 +83,12 @@ bool polling = NO;
 
 - (void)hallo:(unsigned char*)data length:(unsigned int)length{
     int edgePosition = [self trigger:data length:length channel:triggerChannel rising:triggerRising] - triggerPos;
-    NSLog(@"t %i",[self triggerChannel]);
     const int displayLength = 250;
     const int numberOfChannels = 8;
     unsigned char lineBuf[displayLength];
     unsigned char textLine[numberOfChannels][displayLength+1];
-    
-    if(edgePosition>-1){//when edge in data
+    //when edge in data, or command key hold is on
+    if(edgePosition>-1 && !(NSCommandKeyMask & [NSEvent modifierFlags])){
         for(int dataPosition = 0;dataPosition<displayLength;dataPosition++){
             lineBuf[dataPosition] = (edgePosition+dataPosition<length)?data[edgePosition+dataPosition]:0;
             for (int channel = 0; channel < numberOfChannels; channel++) {
