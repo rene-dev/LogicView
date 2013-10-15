@@ -48,13 +48,6 @@ bool polling = NO;
         polling = NO;
         return polling;
         }
-    /*if(pollTimer == nil){
-        pollTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(poll) userInfo:nil repeats:YES];
-        return YES;
-    }
-    else{
-        return NO;
-    }*/
 }
 
 - (BOOL)stopPoll{
@@ -67,14 +60,6 @@ bool polling = NO;
     else{
         return polling;
     }
-    /*if(pollTimer != nil){
-        [pollTimer invalidate];
-        pollTimer = nil;
-        return YES;
-    }
-    else{
-        return NO;
-    }*/
 }
 
 - (void)poll{
