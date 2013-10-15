@@ -35,15 +35,16 @@ bool polling = NO;
     return self;
 }
 
-- (BOOL)startPoll{
+- (BOOL)startPoll:(NSInteger)samplerate{
     if(polling == NO){
+        gDeviceInterface->SetSampleRateHz(samplerates[samplerate]);
         gDeviceInterface->ReadStart();
         polling = YES;
         return polling;
     }
     else{
         gDeviceInterface->Stop();
-        NSLog(@"stopping");
+        //NSLog(@"stopping");
         polling = NO;
         return polling;
         }
@@ -59,7 +60,7 @@ bool polling = NO;
 - (BOOL)stopPoll{
     if(polling == YES){
         gDeviceInterface->Stop();
-        NSLog(@"stopping");
+        //NSLog(@"stopping");
         polling = NO;
         return polling;
     }
@@ -146,8 +147,6 @@ void __stdcall OnConnect( U64 device_id, GenericInterface* device_interface, voi
 		gDeviceInterface->RegisterOnReadData( &OnReadData,user_data);
 		gDeviceInterface->RegisterOnWriteData( &OnWriteData,user_data);
 		gDeviceInterface->RegisterOnError( &OnError,user_data);
-        
-		gDeviceInterface->SetSampleRateHz( gSampleRateHz );
 	}
 }
 

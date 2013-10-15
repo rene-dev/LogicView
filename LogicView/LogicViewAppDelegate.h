@@ -8,8 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 #import "SaleaeLogic.h"
-#import "SampleRate.h"
-@class SampleRate;
 
 @interface LogicViewAppDelegate : NSObject <NSApplicationDelegate,SaleaeLogicDelegate> {
     NSWindow *_window;
@@ -17,17 +15,13 @@
     IBOutlet NSButton *startStopButton;
     IBOutlet NSTextField *value;
     IBOutlet NSTextField *samplestext;
-    IBOutlet NSPopUpButton *SampleRatePopUpButton;
     int samples;
-    NSMutableArray* allSampleRates;
+    IBOutlet NSPopUpButton *sampleRate;
     IBOutlet NSTextField *textField;
-    SampleRate *currentlySelectedSampleRate;
 }
 - (IBAction)botton:(id)sender;
 - (void)sampleRateChanged:(id)sender;
 
-@property (nonatomic, retain) SampleRate *currentlySelectedSampleRate;
-@property (nonatomic,copy) NSMutableArray* allSampleRates;
 @property (strong) IBOutlet NSWindow *window;
 @property (nonatomic,retain) IBOutlet NSTextField *value;
 @property (nonatomic,retain) IBOutlet NSTextField *samplestext;

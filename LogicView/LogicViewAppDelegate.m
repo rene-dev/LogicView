@@ -10,7 +10,7 @@
 
 @implementation LogicViewAppDelegate
 
-@synthesize window = _window,value,startStopButton,samplestext,SampleRatePopUpButton,allSampleRates,currentlySelectedSampleRate,textField;
+@synthesize window = _window,value,startStopButton,samplestext,textField;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
@@ -18,7 +18,7 @@
     [sLogic setDelegate:self];
     [NSApp setDelegate:self];
     [value setStringValue:@""];
-    /*allSampleRates = [NSArray arrayWithObjects:
+    NSArray* allSampleRates = [NSArray arrayWithObjects:
                             @"25 kHz",
                             @"50 kHz",
                             @"100 kHz",
@@ -32,29 +32,9 @@
                             @"12 MHz",
                             @"16 MHz",
                             @"24 MHz",
-                            nil];*/
-
-    NSString *name;
-    NSString *baudRate;
-    allSampleRates = [[NSMutableArray alloc] initWithCapacity:10];
-    SampleRate *sampleRate;
-    for (int i = 0; i < 10; i++) {
-        name = [NSString stringWithFormat:@"%d", i];
-        baudRate = [NSString stringWithFormat:@"%d", 10 * i];
-        
-        sampleRate = [[SampleRate alloc] initWithName:name sampleRate:baudRate];
-        
-        [allSampleRates addObject:sampleRate];
-    }
-
-    //allPorts = [[NSMutableArray alloc] initWithCapacity:10];
+                            nil];
     
-    currentlySelectedSampleRate = [allSampleRates objectAtIndex:1]; // Any initial value
-    
-    
-    //[SampleRate addItemsWithTitles:sampleRates];
-    //[SampleRate setTarget:self];
-    //[SampleRate setAction:@selector(sampleRateChanged:)];
+    [sampleRate addItemsWithTitles:allSampleRates];
     [textField setStringValue:@"1\n2\n3\n4\n5\n6\n7\n8\n"];
 }
 
@@ -72,7 +52,7 @@
 - (void)deviceConnected:(NSString *)deviceID{
     [startStopButton setEnabled:YES];
     [[self window] setTitle:@"LogicView - Connected"];
-    [SampleRatePopUpButton setEnabled:YES];
+    [sampleRate setEnabled:YES];
 }
 
 - (void)deviceDisconnected:(NSString *)deviceID{
@@ -81,7 +61,7 @@
     [sLogic stopPoll];
     [startStopButton setTitle:@"Start"];
     [value setStringValue:@""];
-    [SampleRatePopUpButton setEnabled:YES];
+    [sampleRate setEnabled:YES];
 }
 
 - (void)deviceError:(NSString *)deviceID{
@@ -93,20 +73,20 @@
     [alert setAlertStyle:NSWarningAlertStyle];
     [alert beginSheetModalForWindow:[self window] modalDelegate:nil didEndSelector:nil contextInfo:nil];
     [startStopButton setTitle:@"Start"];
-    [SampleRatePopUpButton setEnabled:YES];
+    [sampleRate setEnabled:YES];
     //todo: um polling in saleaelogic.mm kümmern, das wird hier nicht zurückgesetzt.
     
 }
 
 - (IBAction)botton:(id)sender {
-    if([sLogic startPoll]){
+    if([sLogic startPoll:[sampleRate indexOfSelectedItem]]){
         [startStopButton setTitle:@"Stop"];
-        [SampleRatePopUpButton setEnabled:NO];
+        [sampleRate setEnabled:NO];
     }
     else{
         [value setStringValue:@""];
         [startStopButton setTitle:@"Start"];
-        [SampleRatePopUpButton setEnabled:YES];
+        [sampleRate setEnabled:YES];
     }
 }
 

@@ -15,7 +15,7 @@
     BOOL isReading;   //We are reading from the device
 }
 
-- (BOOL)startPoll;
+- (BOOL)startPoll:(NSInteger)samplerate;
 - (BOOL)stopPoll;
 - (void)poll;
 - (void)hallo:(unsigned char*)data length:(unsigned int)length;
